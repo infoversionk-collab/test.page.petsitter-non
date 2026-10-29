@@ -67,3 +67,70 @@ p, .lead{font-size:17px;line-height:2.05;letter-spacing:.015em}
 .notice{font-size:15px;line-height:2}
 @media(max-width:720px){body{font-size:16px;line-height:2}.hero p,.page-intro p,p,.story-copy p{font-size:16px;line-height:2.05}.section-head p,.service-card p,.guide-card p,.value p,.split p,.faq-item p{font-size:15px;line-height:2}.hero h1{line-height:1.5}.nav-links{font-size:12px}.btn{font-size:15px}}
 @media(max-width:480px){body{font-size:16px}.hero p,.page-intro p,p,.story-copy p{font-size:16px}.section-head h2,.story-copy h2{font-size:27px}.btn{font-size:15px}}
+
+
+/* Mobile-first refinement v8: comfortable reading and no horizontal overflow */
+html{width:100%;overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{min-width:0;overflow-x:clip;overflow-wrap:anywhere}
+main,header,footer,section,article,nav,div{min-width:0}
+img,video,iframe,svg{max-width:100%}
+button,a,.btn{touch-action:manipulation}
+@media (max-width: 720px){
+  .wrap,.container{width:min(100% - 32px, 600px)}
+  .header{position:sticky;top:0}
+  .nav{display:flex;flex-direction:column;align-items:stretch;gap:9px;padding:10px 0 11px;min-height:unset}
+  .brand{margin:0;gap:9px;align-self:flex-start}
+  .brand-mark{width:38px;height:38px;font-size:18px;flex:0 0 38px}
+  .brand-name{font-size:16px;line-height:1.35}
+  .brand-name small{font-size:10px}
+  .nav-links{width:100%;display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:7px;overflow-x:auto;overflow-y:hidden;padding:2px 0 7px;scrollbar-width:thin;-webkit-overflow-scrolling:touch;white-space:nowrap}
+  .nav-links a{flex:0 0 auto;white-space:nowrap;font-size:12px;padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;min-height:36px}
+  .hero{padding:28px 0 34px}
+  .hero-grid,.split{grid-template-columns:minmax(0,1fr);gap:23px}
+  .hero-copy{padding:0}
+  .hero h1{font-size:clamp(29px,7.2vw,36px);line-height:1.48;letter-spacing:-.025em}
+  .hero p,.page-intro p,.story-copy p,p{font-size:16px;line-height:1.95;letter-spacing:0}
+  .hero-visual{padding:0 0 12px 8px}
+  .hero-photo{width:100%;aspect-ratio:4/3;max-height:none;object-fit:cover}
+  .photo-chip{max-width:calc(100% - 8px);font-size:12px;line-height:1.55}
+  .hero-actions{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+  .hero-actions .btn,.cta-actions .btn{width:100%;min-height:48px}
+  .section{padding:38px 0}
+  .section-head{margin-bottom:22px}
+  .section-head h2,.story-copy h2{font-size:clamp(24px,6vw,30px);line-height:1.5}
+  .section-head p{font-size:16px;line-height:1.95}
+  .services-grid,.guide-grid,.values,.footer-grid{grid-template-columns:minmax(0,1fr);gap:16px}
+  .service-card{grid-template-columns:minmax(0,1fr);overflow:hidden}
+  .service-card .photo{min-height:0;height:auto;aspect-ratio:16/10}
+  .service-card .photo img{width:100%;height:100%;object-fit:cover}
+  .service-card .body{padding:20px}
+  .service-card h3,.guide-card h3{font-size:21px;line-height:1.55}
+  .service-card p,.guide-card p,.value p,.split p,.faq-item p{font-size:16px;line-height:1.95}
+  .guide-card{min-height:0;padding:20px}
+  .split img{aspect-ratio:4/3}
+  .split h2{font-size:24px;line-height:1.55}
+  .page-intro{padding:23px 0 8px}
+  .page-intro h1{font-size:clamp(27px,7vw,36px);line-height:1.45;overflow-wrap:anywhere}
+  .breadcrumb{font-size:12px;line-height:1.7;overflow-wrap:anywhere}
+  .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+  .gallery-grid img{height:auto;aspect-ratio:1/1;object-fit:cover}
+  .cta-panel{padding:26px 18px;border-radius:20px}
+  .cta-actions{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+  .notice{font-size:15px;line-height:1.9;padding:14px}
+  .faq-item{padding:17px 0}
+  .faq-item h3{font-size:16px;line-height:1.65}
+  .pills{display:flex;flex-wrap:wrap;gap:8px}
+  .pills a{min-height:38px;display:inline-flex;align-items:center;padding:8px 12px}
+  .mobile-cta{padding:8px 16px calc(8px + env(safe-area-inset-bottom));}
+  footer{padding-bottom:calc(90px + env(safe-area-inset-bottom))}
+}
+@media (max-width: 390px){
+  .wrap,.container{width:calc(100% - 28px)}
+  .hero h1{font-size:29px}
+  .hero p,.page-intro p,.story-copy p,p{font-size:15.5px;line-height:1.95}
+  .section-head h2,.story-copy h2{font-size:24px}
+  .gallery-grid{grid-template-columns:minmax(0,1fr)}
+  .brand-name{font-size:15px}
+  .photo-chip{font-size:11px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
